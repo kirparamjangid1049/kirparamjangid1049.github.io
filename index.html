@@ -6,3 +6,42 @@
     <title>Kirparam Jangid — Portfolio</title>
     <meta name="description" content="Kirparam Jangid — developer portfolio. Projects, services, and contact information.">
     <meta name="theme-color" content="#0b74de">
+<!-- Open Graph / Social -->
+<meta property="og:title" content="Kirparam Jangid — Developer">
+<meta property="og:description" content="Portfolio of Kirparam Jangid — projects, services, and contact.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://kirparamjangid1049.github.io/">
+<meta property="og:image" content="/og-image.png">
+
+<!-- Favicon (add file to repo) -->
+<link rel="icon" href="/favicon.ico">
+
+<!-- Fonts & Styles -->
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+<!-- Basic inline critical styles to avoid flash of unstyled content (optional) -->
+<style>
+  :root{--accent:#0b74de;--bg:#ffffff;--muted:#6b7280;--max:1100px;font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial}
+  *{box-sizing:border-box}
+  html,body{height:100%;margin:0;background:var(--bg);color:#111;font-family:var(--font,Inter),sans-serif}
+  header{background:linear-gradient(90deg,rgba(11,116,222,.06),transparent);backdrop-filter:saturate(.9) blur(.2px)}
+  .container{width:calc(100% - 40px);max-width:var(--max);margin:0 auto}
+  nav{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
+  .logo{font-weight:700;color:var(--accent);font-size:1.05rem}
+  .nav-list{list-style:none;padding:0;margin:0;display:flex;gap:18px}
+  .nav-list a{text-decoration:none;color:inherit;font-weight:500}
+  .hero{padding:72px 0;display:flex;flex-direction:column;gap:18px;align-items:flex-start}
+  .hero h1{margin:0;font-size:2.25rem;line-height:1.05}
+  .hero p{margin:0;color:var(--muted);max-width:60ch}
+  .btn{display:inline-block;padding:10px 16px;background:var(--accent);color:#fff;border-radius:8px;text-decoration:none;font-weight:600}
+  main section{padding:48px 0;border-top:1px solid rgba(0,0,0,.04)}
+  .grid{display:grid;gap:24px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+  footer{padding:28px 0;color:var(--muted);font-size:.95rem}
+  @media (max-width:720px){
+    .nav-list{display:none}
+    .mobile-toggle{display:inline-block}
+  }
+  .mobile-toggle{display:none;background:none;border:0;font-size:1.1rem}
+</style>
