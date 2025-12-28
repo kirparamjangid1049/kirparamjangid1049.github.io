@@ -1,54 +1,95 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    line-height: 1.6;
-    color: #333;
+/* Improved stylesheet for index.html — responsive, accessible, modern styles */
+:root{
+  --bg:#ffffff;
+  --surface:#f8fafc;
+  --muted:#6b7280;
+  --text:#0f172a;
+  --accent:#0b74de;
+  --accent-600:#0a66cc;
+  --radius:10px;
+  --max-width:1100px;
+  --gap:24px;
+  --shadow:0 6px 20px rgba(11,116,222,0.08);
+  --fs-base:16px;
 }
 
-header {
-    background: #2c3e50;
-    color: white;
-    padding: 1rem 0;
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;font-size:var(--fs-base);color:var(--text);background:var(--bg);-webkit-font-smoothing:antialiased}
+img,video{max-width:100%;height:auto}
+
+/* Utility container */
+.container{width:calc(100% - 40px);max-width:var(--max-width);margin:0 auto}
+
+/* Header / nav */
+header{background:linear-gradient(90deg, rgba(11,116,222,.04), transparent);backdrop-filter:saturate(.9) blur(.2px);border-bottom:1px solid rgba(15,23,42,0.04)}
+nav{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
+.logo{font-weight:800;color:var(--accent);font-size:1.05rem}
+
+/* Primary nav */
+.nav-list{list-style:none;margin:0;padding:0;display:flex;gap:18px;align-items:center}
+.nav-list a{color:inherit;text-decoration:none;font-weight:600;padding:8px 10px;border-radius:8px;transition:background .15s, color .15s}
+.nav-list a:hover,.nav-list a:focus{background:rgba(11,116,222,0.06);outline:none}
+
+.mobile-toggle{display:none;background:none;border:0;font-size:1.05rem;padding:8px;cursor:pointer}
+
+/* Hero */
+.hero{padding:72px 0 48px;display:flex;flex-direction:column;gap:18px;align-items:flex-start}
+.hero h1{margin:0;font-size:2.25rem;line-height:1.02}
+.hero p{margin:0;color:var(--muted);max-width:64ch}
+.btn{display:inline-block;padding:10px 16px;background:var(--accent);color:#fff;border-radius:10px;text-decoration:none;font-weight:700;box-shadow:var(--shadow);transition:transform .12s ease,box-shadow .12s ease}
+.btn:hover,.btn:focus{transform:translateY(-2px);box-shadow:0 10px 30px rgba(11,116,222,0.12)}
+
+/* Sections */
+main section{padding:48px 0;border-top:1px solid rgba(15,23,42,0.03)}
+main h2{margin:0 0 12px;font-size:1.25rem}
+
+/* Grid */
+.grid{display:grid;gap:var(--gap);grid-template-columns:repeat(12,1fr)}
+.grid > *{grid-column:span 6}
+@media(min-width:940px){
+  .grid-3{grid-template-columns:repeat(3,1fr)}
+  .grid > *{grid-column:span 1}
 }
 
-nav {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+/* Cards */
+.card{background:var(--surface);padding:18px;border-radius:var(--radius);box-shadow:0 6px 18px rgba(12,18,34,0.03)}
+.card h3{margin-top:0}
+
+/* Forms */
+form label{font-weight:600;color:var(--text)}
+input[type=text],input[type=email],textarea{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(15,23,42,0.08);margin-top:6px}
+textarea{min-height:140px}
+button[type=submit]{background:var(--accent-600);color:#fff;border:0;padding:10px 14px;border-radius:8px;cursor:pointer}
+
+/* Footer */
+footer{padding:28px 0;color:var(--muted);font-size:.95rem;border-top:1px solid rgba(15,23,42,0.04)}
+
+/* Accessibility & small screens */
+.skip-link{position:absolute;left:-9999px}
+.skip-link:focus{left:12px;top:12px;background:#fff;padding:8px;border-radius:6px;border:1px solid rgba(0,0,0,0.08)}
+
+@media (max-width:880px){
+  .nav-list{display:none}
+  .mobile-toggle{display:inline-block}
+  .container{width:calc(100% - 28px)}
+  .hero h1{font-size:1.6rem}
+  .grid{grid-template-columns:1fr}
+  .grid > *{grid-column:1}
 }
 
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
+/* Reduced motion */
+@media (prefers-reduced-motion:reduce){
+  *{transition:none!important}
 }
 
-nav a {
-    color: white;
-    text-decoration: none;
+/* Dark mode support */
+@media (prefers-color-scheme:dark){
+  :root{--bg:#07070a;--surface:#0b1220;--muted:#9aa4b2;--text:#e6eef8}
+  header{border-bottom-color:rgba(255,255,255,0.04)}
 }
 
-.hero {
-    text-align: center;
-    padding: 100px 20px;
-    background: #f4f4f4;
-}
+/* Small visual helpers */
+a{color:var(--accent);text-decoration:underline dotted;}
 
-button {
-    background: #3498db;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-    font-size: 1rem;
-}
-
-footer {
-    text-align: center;
-    padding: 20px;
-    background: #2c3e50;
-    color: white;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-}
+/* Ensure footer doesn't overlap content when it was previously fixed */
+body{padding-bottom:0}
