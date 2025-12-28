@@ -161,3 +161,34 @@
       </nav>
     </div>
   </footer>
+
+  <script>
+    // Mobile nav toggle and simple smooth scrolling
+    (function(){
+      const toggle = document.getElementById('navToggle');
+      const nav = document.getElementById('primary-navigation');
+
+      toggle && toggle.addEventListener('click', () => {
+        const expanded = toggle.getAttribute('aria-expanded') === 'true';
+        toggle.setAttribute('aria-expanded', String(!expanded));
+        if (nav.style.display === 'flex' || nav.style.display === '') {
+          nav.style.display = 'none';
+        } else {
+          nav.style.display = 'flex';
+          nav.style.flexDirection = 'column';
+          nav.style.gap = '12px';
+        }
+      });
+
+      // Smooth scroll for internal links
+      document.querySelectorAll('a[href^="#"]').forEach(a=>{
+        a.addEventListener('click', (e)=>{
+          const target = document.querySelector(a.getAttribute('href'));
+          if(target){ e.preventDefault(); target.scrollIntoView({behavior:'smooth',block:'start'}); }
+        });
+      });
+    })();
+  </script>
+
+</body>
+</html>
