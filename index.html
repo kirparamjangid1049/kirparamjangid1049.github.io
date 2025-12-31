@@ -1,194 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Kirparam Jangid — Portfolio</title>
-    <meta name="description" content="Kirparam Jangid — developer portfolio. Projects, services, and contact information.">
-    <meta name="theme-color" content="#0b74de">
-<!-- Open Graph / Social -->
-<meta property="og:title" content="Kirparam Jangid — Developer">
-<meta property="og:description" content="Portfolio of Kirparam Jangid — projects, services, and contact.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://kirparamjangid1049.github.io/">
-<meta property="og:image" content="/og-image.png">
-
-<!-- Favicon (add file to repo) -->
-<link rel="icon" href="/favicon.ico">
-
-<!-- Fonts & Styles -->
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-
-<!-- Basic inline critical styles to avoid flash of unstyled content (optional) -->
-<style>
-  :root{--accent:#0b74de;--bg:#ffffff;--muted:#6b7280;--max:1100px;font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial}
-  *{box-sizing:border-box}
-  html,body{height:100%;margin:0;background:var(--bg);color:#111;font-family:var(--font,Inter),sans-serif}
-  header{background:linear-gradient(90deg,rgba(11,116,222,.06),transparent);backdrop-filter:saturate(.9) blur(.2px)}
-  .container{width:calc(100% - 40px);max-width:var(--max);margin:0 auto}
-  nav{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
-  .logo{font-weight:700;color:var(--accent);font-size:1.05rem}
-  .nav-list{list-style:none;padding:0;margin:0;display:flex;gap:18px}
-  .nav-list a{text-decoration:none;color:inherit;font-weight:500}
-  .hero{padding:72px 0;display:flex;flex-direction:column;gap:18px;align-items:flex-start}
-  .hero h1{margin:0;font-size:2.25rem;line-height:1.05}
-  .hero p{margin:0;color:var(--muted);max-width:60ch}
-  .btn{display:inline-block;padding:10px 16px;background:var(--accent);color:#fff;border-radius:8px;text-decoration:none;font-weight:600}
-  main section{padding:48px 0;border-top:1px solid rgba(0,0,0,.04)}
-  .grid{display:grid;gap:24px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
-  footer{padding:28px 0;color:var(--muted);font-size:.95rem}
-  @media (max-width:720px){
-    .nav-list{display:none}
-    .mobile-toggle{display:inline-block}
-  }
-  .mobile-toggle{display:none;background:none;border:0;font-size:1.1rem}
-</style>
-
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Personal portfolio of a web developer showcasing projects, skills, and contact info.">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <a class="skip-link" href="#main" style="position:absolute;left:-9999px">Skip to content</a>
-
-  <header>
-    <div class="container">
-      <nav aria-label="Primary">
-        <div class="logo">Kirparam Jangid</div>
-
-    <button class="mobile-toggle" aria-controls="primary-navigation" aria-expanded="false" id="navToggle">
-      ☰ Menu
-    </button>
-
-    <ul id="primary-navigation" class="nav-list" role="menu">
-      <li role="none"><a role="menuitem" href="#home">Home</a></li>
-      <li role="none"><a role="menuitem" href="#about">About</a></li>
-      <li role="none"><a role="menuitem" href="#projects">Projects</a></li>
-      <li role="none"><a role="menuitem" href="#contact">Contact</a></li>
-    </ul>
-  </nav>
-</div>
-
-  </header>
-
-  <main id="main" class="container">
-    <section id="home" class="hero" aria-labelledby="hero-heading">
-      <h1 id="hero-heading">Hi — I'm Kirparam Jangid</h1>
-      <p>I'm a developer focused on building clean, accessible, and performant web experiences. I enjoy working on projects that make an impact and help people solve real problems.</p>
-      <div>
-        <a class="btn" href="#projects">See my work</a>
-        <a href="#contact" style="margin-left:12px;color:var(--accent);font-weight:600;text-decoration:none">Get in touch</a>
-      </div>
+    <header>
+        <nav>
+            <div class="logo">My Portfolio</div>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button id="dark-mode-toggle">Toggle Dark Mode</button>
+        </nav>
+    </header>
+    
+    <section id="hero">
+        <img src="profile.jpg" alt="Profile Picture" class="profile-img"> <!-- Replace with your image -->
+        <h1>Welcome to My Portfolio</h1>
+        <p>I'm a passionate web developer creating innovative solutions. Let's build something amazing together!</p>
+        <a href="#contact" class="cta-button">Get In Touch</a>
     </section>
-
-
-<section id="about" aria-labelledby="about-heading">
-  <h2 id="about-heading">About</h2>
-  <p style="color:var(--muted);max-width:70ch">Short paragraph about who you are, your skills, and what you build. Keep this concise and focused on what visitors (and potential employers/clients) want to know.</p>
-  <div class="grid" style="margin-top:18px">
-    <div>
-      <h3>Skills</h3>
-      <ul>
-        <li>HTML, CSS, JavaScript</li>
-        <li>Responsive & accessible UI</li>
-        <li>Frameworks: React / Next.js (add yours)</li>
-      </ul>
-    </div>
-    <div>
-      <h3>Services</h3>
-      <ul>
-        <li>Frontend development</li>
-        <li>Web performance & accessibility audits</li>
-        <li>Consulting & mentoring</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<section id="projects" aria-labelledby="projects-heading">
-  <h2 id="projects-heading">Projects</h2>
-  <p style="color:var(--muted)">Feature a few highlighted projects with short descriptions and links to their repos or live demos.</p>
-  <div class="grid" style="margin-top:18px">
-    <article>
-      <h3>Project Title</h3>
-      <p style="color:var(--muted)">Short description. <a href="#" rel="noopener">View repo</a> · <a href="#" rel="noopener">Live demo</a></p>
-    </article>
-    <article>
-      <h3>Project Title</h3>
-      <p style="color:var(--muted)">Short description. <a href="#" rel="noopener">View repo</a> · <a href="#" rel="noopener">Live demo</a></p>
-    </article>
-  </div>
-</section>
-
-<section id="contact" aria-labelledby="contact-heading">
-  <h2 id="contact-heading">Contact</h2>
-  <p style="color:var(--muted)">Prefer email? Send a message or connect on GitHub / LinkedIn.</p>
-
-  <form action="mailto:your-email@example.com" method="post" enctype="text/plain" style="max-width:640px;margin-top:12px">
-    <label for="name">Name</label><br>
-    <input id="name" name="name" type="text" required style="width:100%;padding:8px;margin:6px 0;border-radius:6px;border:1px solid #ddd"><br>
-
-    <label for="email">Email</label><br>
-    <input id="email" name="email" type="email" required style="width:100%;padding:8px;margin:6px 0;border-radius:6px;border:1px solid #ddd"><br>
-
-    <label for="message">Message</label><br>
-    <textarea id="message" name="message" rows="6" required style="width:100%;padding:8px;margin:6px 0;border-radius:6px;border:1px solid #ddd"></textarea><br>
-
-    <button class="btn" type="submit">Send</button>
-  </form>
-
-  <p style="margin-top:12px;color:var(--muted)">Or find me on <a href="https://github.com/kirparamjangid1049" target="_blank" rel="noopener">GitHub</a> · <a href="#" target="_blank" rel="noopener">LinkedIn</a></p>
-</section>
-
-</main>
-
-  <footer class="container" role="contentinfo">
-    <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
-      <p style="margin:0">&copy; 2025 Kirparam Jangid</p>
-      <nav aria-label="Footer">
-        <a href="/privacy.html" style="color:var(--muted);text-decoration:none;margin-left:12px">Privacy</a>
-        <a href="/terms.html" style="color:var(--muted);text-decoration:none;margin-left:12px">Terms</a>
-      </nav>
-    </div>
-  </footer>
-
-  <footer class="container" role="contentinfo">
-    <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
-      <p style="margin:0">&copy; 2025 Kirparam Jangid</p>
-      <nav aria-label="Footer">
-        <a href="/privacy.html" style="color:var(--muted);text-decoration:none;margin-left:12px">Privacy</a>
-        <a href="/terms.html" style="color:var(--muted);text-decoration:none;margin-left:12px">Terms</a>
-      </nav>
-    </div>
-  </footer>
-
-  <script>
-    // Mobile nav toggle and simple smooth scrolling
-    (function(){
-      const toggle = document.getElementById('navToggle');
-      const nav = document.getElementById('primary-navigation');
-
-      toggle && toggle.addEventListener('click', () => {
-        const expanded = toggle.getAttribute('aria-expanded') === 'true';
-        toggle.setAttribute('aria-expanded', String(!expanded));
-        if (nav.style.display === 'flex' || nav.style.display === '') {
-          nav.style.display = 'none';
-        } else {
-          nav.style.display = 'flex';
-          nav.style.flexDirection = 'column';
-          nav.style.gap = '12px';
-        }
-      });
-
-      // Smooth scroll for internal links
-      document.querySelectorAll('a[href^="#"]').forEach(a=>{
-        a.addEventListener('click', (e)=>{
-          const target = document.querySelector(a.getAttribute('href'));
-          if(target){ e.preventDefault(); target.scrollIntoView({behavior:'smooth',block:'start'}); }
-        });
-      });
-    })();
-  </script>
-
+    
+    <section id="about">
+        <h2>About Me</h2>
+        <p>Hi! I'm a full-stack developer with 5+ years of experience in HTML, CSS, JavaScript, React, and Node.js. I specialize in user-friendly web apps and enjoy solving complex problems. When not coding, I love hiking and reading tech blogs.</p>
+    </section>
+    
+    <section id="skills">
+        <h2>Skills</h2>
+        <div class="skills-grid">
+            <div class="skill">HTML5</div>
+            <div class="skill">CSS3</div>
+            <div class="skill">JavaScript</div>
+            <div class="skill">React</div>
+            <div class="skill">Node.js</div>
+            <div class="skill">Git</div>
+        </div>
+    </section>
+    
+    <section id="projects">
+        <h2>My Projects</h2>
+        <div class="project">
+            <h3>Project 1: React Web App</h3>
+            <p>A dynamic task manager built with React and Firebase. Features include real-time updates and user authentication.</p>
+            <a href="#" target="_blank">View Demo</a> | <a href="#" target="_blank">GitHub Repo</a>
+        </div>
+        <div class="project">
+            <h3>Project 2: E-Commerce Site</h3>
+            <p>A full-stack online store using Node.js, Express, and MongoDB. Includes payment integration and admin dashboard.</p>
+            <a href="#" target="_blank">View Demo</a> | <a href="#" target="_blank">GitHub Repo</a>
+        </div>
+        <div class="project">
+            <h3>Project 3: Portfolio Site</h3>
+            <p>This very site! A responsive portfolio built with vanilla HTML, CSS, and JS.</p>
+            <a href="#" target="_blank">View Demo</a> | <a href="#" target="_blank">GitHub Repo</a>
+        </div>
+    </section>
+    
+    <section id="blog">
+        <h2>Latest Blog Posts</h2>
+        <article class="blog-post">
+            <h3>Getting Started with React</h3>
+            <p>A beginner's guide to building your first React app. Learn components, state, and props.</p>
+            <a href="#" target="_blank">Read More</a>
+        </article>
+        <article class="blog-post">
+            <h3>Why Responsive Design Matters</h3>
+            <p>Explore the importance of mobile-first design and how to implement it with CSS.</p>
+            <a href="#" target="_blank">Read More</a>
+        </article>
+    </section>
+    
+    <section id="testimonials">
+        <h2>Testimonials</h2>
+        <div class="testimonial">
+            <p>"Amazing work! Delivered on time and exceeded expectations."</p>
+            <cite>- Client A</cite>
+        </div>
+        <div class="testimonial">
+            <p>"Highly skilled and easy to work with. Highly recommend!"</p>
+            <cite>- Client B</cite>
+        </div>
+    </section>
+    
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <form id="contact-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" required>
+            <label for="message">Message:</label>
+            <textarea id="message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+        <p id="form-response"></p>
+    </section>
+    
+    <footer>
+        <p>&copy; 2023 My Portfolio. All rights reserved. | <a href="#hero">Back to Top</a></p>
+    </footer>
+    
+    <script src="script.js"></script>
 </body>
 </html>
